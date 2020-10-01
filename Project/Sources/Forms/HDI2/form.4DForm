@@ -1,0 +1,984 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 800,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 540,
+	"windowMaxHeight": 32000,
+	"width": 1000,
+	"height": 900,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 960,
+					"height": 860,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"TraceCheckbox": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 850,
+					"left": 30,
+					"width": 80,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "btnTrace",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 90,
+					"left": 90,
+					"width": 850,
+					"height": 420,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Static Picture1": {
+					"type": "picture",
+					"top": 590,
+					"left": 390,
+					"width": 197,
+					"height": 251,
+					"picture": "Images/Static Picture2.tif",
+					"pictureFormat": "scaled"
+				}
+			}
+		},
+		{
+			"objects": {
+				"ListBoxStudents": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.students",
+					"top": 320,
+					"left": 90,
+					"width": 365,
+					"height": 201,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"headerHeight": "21px",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"selectionMode": "none",
+					"focusable": false,
+					"rowHeight": "20px",
+					"events": [],
+					"currentItemSource": "",
+					"metaSource": "setColor(\"\")",
+					"hideSystemHighlight": true,
+					"columns": [
+						{
+							"header": {
+								"name": "Header12",
+								"text": "ID"
+							},
+							"name": "Column13",
+							"dataSource": "This:C1470.ID",
+							"width": 70,
+							"textAlign": "center",
+							"footer": {
+								"name": "Footer14"
+							}
+						},
+						{
+							"header": {
+								"name": "Header15",
+								"text": "Firstname"
+							},
+							"name": "Column14",
+							"dataSource": "This:C1470.firstname",
+							"width": 100,
+							"footer": {
+								"name": "Footer15"
+							},
+							"enterable": false
+						},
+						{
+							"name": "lastname4",
+							"dataSource": "This:C1470.lastname",
+							"width": 100,
+							"enterable": false,
+							"header": {
+								"text": "Lastname",
+								"name": "3"
+							},
+							"footer": {
+								"name": "4"
+							}
+						},
+						{
+							"header": {
+								"name": "Header16",
+								"text": "Age",
+								"fontWeight": "bold"
+							},
+							"name": "Column15",
+							"dataSource": "This:C1470.age()",
+							"footer": {
+								"name": "Footer16"
+							},
+							"width": 70,
+							"enterable": false,
+							"textAlign": "center"
+						}
+					]
+				},
+				"Text4": {
+					"type": "text",
+					"text": "Students list",
+					"top": 300,
+					"left": 90,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				},
+				"ListBoxRequestsLocal": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.requests",
+					"top": 580,
+					"left": 90,
+					"width": 835,
+					"height": 261,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"headerHeight": "21px",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"selectionMode": "none",
+					"focusable": false,
+					"rowHeight": "40px",
+					"events": [
+						"onSelectionChange"
+					],
+					"currentItemSource": "",
+					"metaSource": "",
+					"hideSystemHighlight": false,
+					"columns": [
+						{
+							"header": {
+								"name": "Header17",
+								"text": "Number"
+							},
+							"name": "Column16",
+							"dataSource": "This:C1470.number",
+							"width": 70,
+							"textAlign": "center",
+							"footer": {
+								"name": "Footer17"
+							}
+						},
+						{
+							"header": {
+								"name": "Header18",
+								"text": "URL"
+							},
+							"name": "Column17",
+							"dataSource": "This:C1470.url",
+							"width": 700,
+							"footer": {
+								"name": "Footer18"
+							},
+							"enterable": true,
+							"textAlign": "left",
+							"wordwrap": "normal"
+						},
+						{
+							"header": {
+								"name": "Header1",
+								"text": ""
+							},
+							"name": "Column1",
+							"dataSource": "getPicture",
+							"events": [
+								"onClick"
+							],
+							"footer": {
+								"name": "Footer1"
+							},
+							"method": "ObjectMethods/Column1.4dm",
+							"width": 50,
+							"textAlign": "center",
+							"dataSourceTypeHint": "picture",
+							"pictureFormat": "truncatedCenter"
+						}
+					]
+				},
+				"Button2": {
+					"type": "button",
+					"text": "View requests",
+					"top": 530,
+					"left": 90,
+					"width": 130,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm",
+					"focusable": false
+				},
+				"Input4": {
+					"type": "input",
+					"left": 870,
+					"top": 850,
+					"width": 50,
+					"height": 20,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"fontWeight": "bold",
+					"stroke": "#800080",
+					"textAlign": "right",
+					"dataSource": "Form:C1466.requests.length"
+				},
+				"StartCS": {
+					"type": "text",
+					"text": "Start this HDI in C/S mode",
+					"top": 530,
+					"left": 230,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold",
+					"stroke": "#ff0000"
+				},
+				"information6": {
+					"type": "input",
+					"top": 320,
+					"left": 480,
+					"width": 460,
+					"height": 200,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{6}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text5": {
+					"type": "text",
+					"text": "StudentsEntity class",
+					"top": 300,
+					"left": 480,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"stroke": "automatic"
+				},
+				"information7": {
+					"type": "input",
+					"top": 90,
+					"left": 90,
+					"width": 850,
+					"height": 180,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text6": {
+					"type": "text",
+					"text": "Requests",
+					"top": 560,
+					"left": 90,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				}
+			}
+		},
+		{
+			"objects": {
+				"ListBoxStudents2": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.students",
+					"top": 320,
+					"left": 90,
+					"width": 385,
+					"height": 201,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"headerHeight": "21px",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"selectionMode": "none",
+					"focusable": false,
+					"rowHeight": "20px",
+					"events": [],
+					"currentItemSource": "",
+					"metaSource": "setColor(\"\")",
+					"hideSystemHighlight": true,
+					"columns": [
+						{
+							"header": {
+								"name": "Header3",
+								"text": "ID"
+							},
+							"name": "Column3",
+							"dataSource": "This:C1470.ID",
+							"width": 70,
+							"textAlign": "center",
+							"footer": {
+								"name": "Footer3"
+							}
+						},
+						{
+							"header": {
+								"name": "Header4",
+								"text": "Firstname"
+							},
+							"name": "Column4",
+							"dataSource": "This:C1470.firstname",
+							"width": 100,
+							"footer": {
+								"name": "Footer4"
+							},
+							"enterable": false
+						},
+						{
+							"name": "lastname2",
+							"dataSource": "This:C1470.lastname",
+							"width": 100,
+							"enterable": false,
+							"header": {
+								"text": "Lastname",
+								"name": "1"
+							},
+							"footer": {
+								"name": "2"
+							}
+						},
+						{
+							"header": {
+								"name": "Header7",
+								"text": "AgeNotLocal",
+								"fontWeight": "bold"
+							},
+							"name": "Column7",
+							"dataSource": "This:C1470.ageNotLocal()",
+							"width": 100,
+							"resizable": true,
+							"enterable": false,
+							"footer": {
+								"name": "Footer7"
+							},
+							"textAlign": "center"
+						}
+					]
+				},
+				"Text7": {
+					"type": "text",
+					"text": "Students list",
+					"top": 300,
+					"left": 90,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				},
+				"ListBoxRequestsNotLocal": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.requests",
+					"top": 580,
+					"left": 90,
+					"width": 835,
+					"height": 261,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"headerHeight": "21px",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"selectionMode": "none",
+					"focusable": false,
+					"rowHeight": "40px",
+					"events": [
+						"onSelectionChange"
+					],
+					"currentItemSource": "",
+					"metaSource": "",
+					"hideSystemHighlight": false,
+					"columns": [
+						{
+							"header": {
+								"name": "Header8",
+								"text": "Number"
+							},
+							"name": "Column8",
+							"dataSource": "This:C1470.number",
+							"width": 70,
+							"textAlign": "center",
+							"footer": {
+								"name": "Footer8"
+							}
+						},
+						{
+							"header": {
+								"name": "Header9",
+								"text": "URL"
+							},
+							"name": "Column9",
+							"dataSource": "This:C1470.url",
+							"width": 700,
+							"footer": {
+								"name": "Footer9"
+							},
+							"enterable": true,
+							"textAlign": "left",
+							"wordwrap": "normal"
+						},
+						{
+							"header": {
+								"name": "Header10",
+								"text": ""
+							},
+							"name": "Column10",
+							"dataSource": "getPicture",
+							"events": [
+								"onClick"
+							],
+							"footer": {
+								"name": "Footer10"
+							},
+							"method": "ObjectMethods/Column10.4dm",
+							"width": 50,
+							"textAlign": "center",
+							"dataSourceTypeHint": "picture",
+							"pictureFormat": "truncatedCenter"
+						}
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"text": "View requests",
+					"top": 530,
+					"left": 90,
+					"width": 130,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"focusable": false
+				},
+				"Input2": {
+					"type": "input",
+					"left": 870,
+					"top": 850,
+					"width": 50,
+					"height": 20,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"fontWeight": "bold",
+					"stroke": "#800080",
+					"textAlign": "right",
+					"dataSource": "Form:C1466.requests.length"
+				},
+				"StartCS2": {
+					"type": "text",
+					"text": "Start this HDI in C/S mode",
+					"top": 530,
+					"left": 230,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold",
+					"stroke": "#ff0000"
+				},
+				"information8": {
+					"type": "input",
+					"top": 320,
+					"left": 480,
+					"width": 460,
+					"height": 200,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{7}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text8": {
+					"type": "text",
+					"text": "StudentsEntity class",
+					"top": 300,
+					"left": 480,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"stroke": "automatic"
+				},
+				"information9": {
+					"type": "input",
+					"top": 90,
+					"left": 90,
+					"width": 850,
+					"height": 180,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text9": {
+					"type": "text",
+					"text": "Requests",
+					"top": 560,
+					"left": 90,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text11": {
+					"type": "text",
+					"text": "Last name:",
+					"top": 420,
+					"left": 640,
+					"width": 150,
+					"height": 20,
+					"textAlign": "right",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"fontWeight": "normal"
+				},
+				"information1": {
+					"type": "input",
+					"top": 90,
+					"left": 90,
+					"width": 850,
+					"height": 210,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{4}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Input": {
+					"type": "input",
+					"left": 540,
+					"top": 420,
+					"width": 150,
+					"height": 20,
+					"dataSource": "Form:C1466.data.firstname",
+					"events": [
+						"onAfterKeystroke"
+					],
+					"method": "ObjectMethods/Input.4dm",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Students list",
+					"top": 290,
+					"left": 90,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				},
+				"Input1": {
+					"type": "input",
+					"left": 810,
+					"top": 420,
+					"width": 150,
+					"height": 20,
+					"dataSource": "Form:C1466.data.lastname",
+					"events": [
+						"onAfterKeystroke"
+					],
+					"method": "ObjectMethods/Input1.4dm",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				},
+				"studentIdButton": {
+					"type": "button",
+					"text": "Compute student ID",
+					"top": 590,
+					"left": 130,
+					"width": 190,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/studentIdButton.4dm",
+					"focusable": false
+				},
+				"ListBoxStudentsExposed": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.students",
+					"top": 310,
+					"left": 90,
+					"width": 355,
+					"height": 141,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"headerHeight": "21px",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"selectionMode": "single",
+					"focusable": false,
+					"rowHeight": "20px",
+					"events": [
+						"onSelectionChange"
+					],
+					"currentItemSource": "Form:C1466.selectedStudent",
+					"metaSource": "setColor(\"\")",
+					"hideSystemHighlight": false,
+					"columns": [
+						{
+							"header": {
+								"name": "Header5",
+								"text": "First name"
+							},
+							"name": "Column5",
+							"dataSource": "This:C1470.firstname",
+							"width": 120,
+							"footer": {
+								"name": "Footer5"
+							},
+							"enterable": false
+						},
+						{
+							"name": "lastname1",
+							"dataSource": "This:C1470.lastname",
+							"width": 120,
+							"enterable": false,
+							"header": {
+								"text": "Last name",
+								"name": "10"
+							},
+							"footer": {
+								"name": "11"
+							}
+						},
+						{
+							"header": {
+								"name": "Header14",
+								"text": "Student ID"
+							},
+							"name": "Column12",
+							"dataSource": "This:C1470.studentId",
+							"dataSourceTypeHint": "number",
+							"width": 100,
+							"enterable": false,
+							"textAlign": "center",
+							"footer": {
+								"name": "Footer13"
+							}
+						}
+					]
+				},
+				"Text10": {
+					"type": "text",
+					"text": "Enter student's information:",
+					"top": 390,
+					"left": 460,
+					"width": 200,
+					"height": 20,
+					"textAlign": "left",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"fontWeight": "bold"
+				},
+				"information4": {
+					"type": "input",
+					"top": 690,
+					"left": 130,
+					"width": 660,
+					"height": 180,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "Form:C1466.response",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "dotted",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [],
+					"textAlign": "left"
+				},
+				"information5": {
+					"type": "input",
+					"top": 450,
+					"left": 810,
+					"width": 200,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"information16": {
+					"type": "input",
+					"top": 450,
+					"left": 540,
+					"width": 200,
+					"height": 20,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text1": {
+					"type": "text",
+					"text": "First name:",
+					"top": 420,
+					"left": 370,
+					"width": 150,
+					"height": 20,
+					"textAlign": "right",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"fontWeight": "normal"
+				},
+				"RegisterButton": {
+					"type": "button",
+					"text": "Register",
+					"top": 520,
+					"left": 130,
+					"width": 150,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/RegisterButton.4dm",
+					"focusable": false
+				},
+				"CreationOK": {
+					"type": "text",
+					"text": "Creation successful",
+					"top": 460,
+					"left": 90,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold",
+					"stroke": "#008000"
+				},
+				"information2": {
+					"type": "input",
+					"top": 520,
+					"left": 340,
+					"width": 400,
+					"height": 50,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Button": {
+					"type": "button",
+					"text": "View Students dataclass class",
+					"top": 620,
+					"left": 690,
+					"width": 280,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm",
+					"focusable": false,
+					"fontFamily": "Courier",
+					"fontSize": 13
+				},
+				"information3": {
+					"type": "input",
+					"top": 590,
+					"left": 340,
+					"width": 350,
+					"height": 50,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_TabLineCode{5}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"ExposedResult": {
+					"type": "text",
+					"text": "Result",
+					"top": 670,
+					"left": 130,
+					"width": 250,
+					"height": 20,
+					"textAlign": "left",
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"fontWeight": "bold"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 1872,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
