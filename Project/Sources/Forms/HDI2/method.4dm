@@ -63,7 +63,7 @@ Case of
 		OBJECT SET TITLE:C194(*; "ExposedResult"; "")
 		
 		If (Num:C11(codeWindow)#0)
-			CALL FORM:C1391(codeWindow; "fillFunctionCode"; FORM Get current page:C276; Null:C1517)
+			CALL FORM:C1391(codeWindow; "fillFunctionCode"; FORM Get current page:C276)
 		End if 
 		
 		manageTexts
